@@ -6,14 +6,11 @@ import IslandList from "./Components/IslandList";
 import data from "./data/islands";
 
 function App() {
-  const [island, setIsland] = useState({
-    name: "Boubyan",
-    img: "http://photos.wikimapia.org/p/00/02/20/48/92_big.jpg",
-  });
+  const [island, setIsland] = useState(data[1]);
   const [islands, setIslands] = useState(data);
   const incrementVisitors = (island) => {
     island.visitors++;
-    setIslands([islands]);
+    setIslands([...islands]);
   };
   return (
     <div>
